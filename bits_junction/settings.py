@@ -110,6 +110,6 @@ CKEDITOR_CONFIGS = {
 }
 
 try:
-    from settings_development import *
+    from settings_template import *
 except ImportError:
     pass
