@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+<ol class="breadcrumb">
+	<li><a href="/quiz">Quiz List</a></li>
+	<li class="active">{{ quiz.title }}</li>
+</ol>
+<h3>{{ quiz.title }}</h3>
+<div class="row">
+	<div class="col-md-8"><a href="/quiz/{{ quiz.id }}/add" class="btn btn-primary" role="button">Add new Question</a></div>
+	<!-- <div class="col-md-4"><input type="text" class="form-control" placeholder="Search"></div> -->	
+</div>
+<br />
+<table class="table table-hover">
+	{% for question in question_list %}
+		<tr>
+			<td>
+				<a href="/quiz/{{ quiz.id }}/{{ question.id }}">{{ question.question_text|safe|striptags }}</a>
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+{% endblock %}

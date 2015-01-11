@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ol class="breadcrumb">
+  <li class="active">Quiz List</li>
+</ol>
+<div class="list-group">
+{% for quiz in quiz_list %}
+    <a href="/quiz/{{ quiz.id }}" class="list-group-item">{{ quiz.title }}
+        <div class="pull-right">
+            <!-- <small><i>Due: {{ quiz.due_date }}</i></small> -->
+            <span class="label label-warning">Due: {{ quiz.due_date }}</span>
+            <!-- &nbsp;&nbsp;<span class="label label-info">25 questions</span> -->
+        </div>
+    </a>
+{% endfor %}
+</div>
+{% endblock %}

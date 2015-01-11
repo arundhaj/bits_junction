@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form-login clearfix" action="/auth" method="post" role="form">
+	{% csrf_token %}
+	<h3>Please sign in</h3>
+	<div id="bitsIDdiv" class="form-group input-group">
+		<input type="text" class="form-control" name="bitsID" id="bitsID"
+			placeholder="BITS ID"> <span class="input-group-addon">@wilp.bits-pilani.ac.in</span>
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control" name="password"
+			id="password" placeholder="Password">
+	</div>
+	<div class="">
+		<a class="btn btn-link" href="/signup">Sign Up</a>
+		<a class="btn btn-link" href="/reset">Reset Password</a>
+		
+		<button id="login_button" type="submit" class="btn btn-primary pull-right">Sign In</button>
+	</div>
+</form>
+{% endblock %}

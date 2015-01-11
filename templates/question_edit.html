@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ol class="breadcrumb">
+  <li><a href="/quiz">Quiz List</a></li>
+  <li><a href="/quiz/{{ quiz.id }}">{{ quiz.title }}</a></li>
+</ol>
+<br />
+<form method="post" action="{{ action_url }}">
+	{% csrf_token %}
+	{{ question_form.media }}
+	<div class="question-row">
+		<label for="id_question_text" class="question-label">Question</label>
+		{{ question_form.question_text }}
+	</div>
+	<br />
+	<div class="question-row clearfix">
+		<label for="id_question_text" class="question-label">Type</label>
+		<div class="col-md-3">
+			{{ question_form.type }}
+		</div>
+	</div>
+	<br />
+	{{ question_form.quiz.as_hidden }}
+	<div class="question-row">
+		<button type="button" class="btn btn-primary btn-xs" id="addOption"><span class="glyphicon glyphicon-plus"></span> Add another option</button>
+	</div>
+	<br />
+	<div class="question-row">
+		<table id="optionTable" class="table table-striped">
+			{{ option_list.management_form }}
+			<thead>
+			<tr>
+				<th>
+					<div class="col-md-4">
+						Option(s)
+					</div>
+					<div class="col-md-2 pull-right">
+						Delete
+					</div>
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for option in option_list %}
+			<tr class="option-row">
+				<td>
+					<div class="col-md-4">
+						{{ option.option_text }}
+						{{ option.id.as_hidden }}
+						{{ option.order.as_hidden }}
+						{{ option.question.as_hidden }}
+					</div>
+					<div class="col-md-2 pull-right">
+						<div style="margin-left: 14px">{{ option.DELETE }}</div>
+					</div>
+				</td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<br />
+	<div class="question-row mystyle">
+		<button type="submit" class="btn btn-primary">Save</button>
+		<a href="/quiz/{{ quiz.id }}/{{ question.id }}" class="btn btn-default">Cancel</a>
+	</div>
+</form>
+{% endblock %}
+<!-- <button id="deleteOption" type="button" class="btn btn-link pull-right"><span class="glyphicon glyphicon-remove"></span></button> -->
