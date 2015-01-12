@@ -1,10 +1,9 @@
 from django.conf.urls import patterns, url
 
-from views import QuestionAddView
+from views import QuestionAddView, HomeView
 from views import QuestionEditView
 from views import QuestionView
 from views import QuizListView
-from views import QuizListViewRedirect
 from views import QuizView
 
 
@@ -13,7 +12,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'quiz.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     
-    url(r'^$', QuizListViewRedirect.as_view(), name="redirect"),
+    url(r'^$', HomeView.as_view(), name="home"),
     url(r'^quiz$', QuizListView.as_view(), name="quiz_list"),
     url(r'^quiz/(?P<quiz_id>\d+)$', QuizView.as_view(), name="quiz"),
     url(r'^quiz/(?P<quiz_id>\d+)/(?P<question_id>\d+)$', QuestionView.as_view(), name="question"),

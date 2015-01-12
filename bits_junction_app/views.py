@@ -15,8 +15,11 @@ from django.views import generic
 from forms import QuestionForm, OptionInlineFormSet
 from models import Quiz, Question, Option
 
-
-# Create your views here.
+class HomeView(generic.View):
+    def get(self, request):
+        context = RequestContext(request, {})
+        return render_to_response('fb_home.html', context)
+    
 class SignInAndSignUp(generic.View):
     def get(self, request):
         context = RequestContext(request, {})

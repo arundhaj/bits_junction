@@ -9,63 +9,25 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-social.css' %}">
+<link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+
 </head>
 
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">BITS Junction</a>
-			</div>
-			{% if user.is_authenticated %}
-			<div class="collapse navbar-collapse pull-right">
-				<ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> &nbsp;{{ user.username|lower }} <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-	                        <li>
-	                            <div class="navbar-login">
-	                                <div class="row">
-	                                    <div class="col-lg-12">
-	                                        <p class="text-left"><strong>{{ user.first_name }} {{ user.last_name }}</strong></p>
-	                                        <p class="text-left small">{{ user.email }}</p>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </li>
-	                        <li class="divider"></li>
-	                        <li>
-	                            <div class="navbar-login navbar-login-session">
-	                                <div class="row">
-	                                    <div class="col-lg-12">
-	                                        <p>
-	                                            <a href="/logout" class="btn btn-danger btn-block">Logout</a>
-	                                        </p>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </li>						
-						</ul>
-					</li>
-				</ul>
-			</div>
-        	{% endif %}
-		</div>
-	</nav>
-	<br />
-	<div class="container quiz-container">
-		<br />
-{% block content %}
-{% endblock %}
-		<br />
+	<div class="mbody mrow scroll-x scroll-y">
+	    <div class="mheader mrow appheadbg">
+        	<a href="{% url 'home' %}" class="apphead"><i class="fa fa-graduation-cap"></i> BITS Junction</a>
+	    </div>
+	
+		{% block content %}
+		{% endblock %}
+
 	</div>
-	<footer class="quiz-footer">
-		<div class="container">
-			<p>This is an unofficial site for BITS WILP students to help assist the learning process. Please use the site responsibly.</p>
-		</div>
-	</footer>
+
+
 <script src="{% static 'js/jquery-1.11.1.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/bootstrap.js' %}" type="text/javascript"></script>
 <script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}" type="text/javascript"></script>

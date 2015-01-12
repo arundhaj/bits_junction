@@ -1,50 +1,160 @@
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: #eee;
+	margin: 0;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: #eee;
+	padding-top: 40px;
+}
+
+.mrow, .mcol {
+	overflow: hidden;
+	position: absolute;
+}
+
+.mrow {
+	left: 0;
+	right: 0;
+}
+
+.mcol {
+	top: 0;
+	bottom: 0;
+}
+
+.scroll-x {
+	overflow-x: auto;
+}
+
+.scroll-y {
+	overflow-y: auto;
+}
+
+.mbody.mrow {
+	min-width: 960px;
+	min-height: 600px;
+	top: 0px;
+	bottom: 5px;
+}
+
+.mheader.mrow {
+	padding-top: 6px;
+	height: 60px;
+	top: 0;
+}
+
+.appheadbg {
+	color: white;
+	font-size: 2.1em;
+	vertical-align: middle;
+}
+
+.apphead {
+	color: black;
+	vertical-align: middle;
+	padding-top: 30px;
+	margin: 0;
+	margin-left: 80px;
+	font-weight: bold;
+	font-family: 'Signika';
+}
+
+.apphead:hover {
+	text-decoration: none;
+	color: #585858;
+}
+
+.sub-body.mrow {
+	top: 170px;
+}
+
+.landing-image {
+	top: 60px;
+	padding-top: 30px;
+	background-color: #E6E6E6;
+	height: 250px;
+	background: url('../img/landing.jpg') no-repeat center center;
+}
+
+.landing-image1 {
+	top: 60px;
+	padding-top: 30px;
+	background-color: #E6E6E6;
+	height: 100px;
+	background: url('../img/landing.jpg') no-repeat center center;
+}
+
+
+.site-info.mrow {
+	height: 200px;
+	padding-top: 30px;
+	top: 310px;
+	text-align: center;
+}
+
+.site-info-div {
+	padding-top: 20px;
+	border: 1px solid #BDBDBD;
+	border-radius: 5px;
+}
+
+.signin.mrow {
+	padding-top: 10px;
+	height: 60px;
+	top: 510px;
+	text-align: center;
+}
+
+.signin-button {
+	width: 200px;
+	margin: 0 auto;
 }
 
 .form-login {
-  max-width: 500px;
-  padding: 15px;
-  margin: 0 auto;
-  background-color: #f6f6f6;
+	max-width: 500px;
+	padding: 15px;
+	margin: 0 auto;
+	background-color: #f6f6f6;
 }
 
 .form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-  background-color: #f6f6f6;
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+	background-color: #f6f6f6;
 }
-.form-signin .form-signin-heading,
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+	margin-bottom: 10px;
+}
+
 .form-signin .checkbox {
-  margin-bottom: 10px;
+	font-weight: normal;
 }
-.form-signin .checkbox {
-  font-weight: normal;
-}
+
 .form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
 }
+
 .form-signin .form-control:focus {
-  z-index: 2;
+	z-index: 2;
 }
+
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
+
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .quiz-container {
@@ -61,7 +171,7 @@ body {
 }
 
 .label-type {
-	margin-left:57px;
+	margin-left: 57px;
 }
 
 .mystyle {
@@ -69,23 +179,20 @@ body {
 	margin: 0 auto;
 }
 
-.navbar-login
-{
-    width: 250px;
-    padding: 10px;
-    padding-bottom: 0px;
+.navbar-login {
+	width: 250px;
+	padding: 10px;
+	padding-bottom: 0px;
 }
 
-.navbar-login-session
-{
-    padding: 10px;
-    padding-bottom: 0px;
-    padding-top: 0px;
+.navbar-login-session {
+	padding: 10px;
+	padding-bottom: 0px;
+	padding-top: 0px;
 }
 
-.icon-size
-{
-    font-size: 87px;
+.icon-size {
+	font-size: 87px;
 }
 
 .quiz-footer {
@@ -94,5 +201,5 @@ body {
 	margin-top: 100px;
 	color: #777;
 	text-align: center;
-	border-top: 1px solid #fff;	
+	border-top: 1px solid #fff;
 }
